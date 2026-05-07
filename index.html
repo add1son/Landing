@@ -1,349 +1,307 @@
 <!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Add1son.com</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        
+        <style>
+            /* --- Blog Feed Styling --- */
+            #wp-posts-list ul.alt li {
+                padding: 1.5rem 0;
+                display: flex;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+            #wp-posts-list .post-thumb {
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                border-radius: 4px;
+                border: 1px solid rgba(255,255,255,0.2);
+                flex-shrink: 0;
+                display: none; 
+            }
+            #wp-posts-list .post-content {
+                flex-grow: 1;
+            }
+            #wp-posts-list .date {
+                display: block;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 0.75rem;
+                color: #00ff00; /* Matrix Green */
+                margin-bottom: 0.25rem;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+            }
+            #wp-posts-list a.post-link {
+                border-bottom: none;
+                font-weight: bold;
+                font-size: 1.1em;
+                line-height: 1.3;
+                display: block;
+                margin-bottom: 0.5rem;
+                transition: color 0.2s ease-in-out;
+            }
+            #wp-posts-list a.post-link:hover {
+                color: #00ff00;
+            }
+            #wp-posts-list p {
+                margin-bottom: 0;
+                font-size: 0.9rem;
+                line-height: 1.5;
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+            /* --- Grid Styling (Used for Work & Resources) --- */
+            .work-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+            .work-item {
+                flex: 1 1 40%; /* Fits 2 per row nicely */
+                background: rgba(255,255,255,0.05);
+                padding: 1.5rem;
+                border-radius: 4px;
+                border: 1px solid rgba(255,255,255,0.1);
+                transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+                text-align: center;
+                text-decoration: none;
+                border-bottom: none !important;
+            }
+            .work-item:hover {
+                transform: translateY(-5px);
+                background: rgba(255,255,255,0.1);
+                border-color: #00ff00;
+            }
+            .work-item .icon {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                color: #ffffff;
+                transition: color 0.2s ease;
+            }
+            .work-item:hover .icon {
+                color: #00ff00;
+            }
+            .work-item h3 {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+                color: #ffffff;
+            }
+            .work-item p {
+                font-size: 0.8rem;
+                margin-bottom: 0;
+                color: rgba(255,255,255,0.6);
+            }
+            
+            /* --- Mobile Adjustments --- */
+            @media screen and (max-width: 736px) {
+                #wp-posts-list ul.alt li {
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+                .post-thumb {
+                    width: 100% !important;
+                    height: 150px !important;
+                }
+                .work-item {
+                    flex: 1 1 100%;
+                }
+            }
+        </style>
 	</head>
 <noscript>
   <style>html{display:none;}</style>
   <meta http-equiv="refresh" content="0.0;url=./index_nojs.html">
-	<!-- Redirects to index_nojs.html should js be disabled -->
 </noscript>
 
 	<audio autoplay=""> <source src="./gratz.mp3"> </audio>
 	<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
+				<header id="header">
 						<div class="logo">
-							<span class="icon fa-eye"></span>
+							<span class="icon fa-terminal"></span>
 						</div>
 						<div class="content">
 							<div class="inner">
 								<h1>Add1son</h1>
-								<p><!--[-->Welcome to my landing page. <!--]--><br />
-								<!--[--><a href="https://keybase.io/addison">Keybase</a> <br /> <!--]-->
-								<!--[--><a href="https://add1son.com/blog">Blog</a> <br />     <!--]--></p>
+								<p>SYSTEMS ENGINEER | SECURITY ENTHUSIAST | BUILDER<br />
+								<a href="https://keybase.io/addison">Keybase</a> </p>
 							</div>
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
+								<li><a href="#work">Projects</a></li>
+                                <li><a href="#blog">Posts</a></li>
+                                <li><a href="#resources">Resources</a></li> <li><a href="#contact">Contact</a></li>
 							</ul>
 						</nav>
 					</header>
 
-				<!-- Main -->
-					<div id="main">
+				<div id="main">
 
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">Intro</h2>
+						<article id="work">
+								<h2 class="major">Projects & Ops</h2>
 								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>check out my <a href="#work">awesome work</a>.</p>
-								<p>Paragraph 2</p>
+								<p>My work focuses on building resilient systems and securing infrastructure. Here are a few active areas of operation:</p>
+                                
+                                <div class="work-grid">
+                                    <a href="https://add1son.com/blog/lab" class="work-item">
+                                        <div class="icon fa-server"></div>
+                                        <h3>Home Lab</h3>
+                                        <p>Simulated IPS/IDS, TrueNAS Scale, and Docker orchestration.</p>
+                                    </a>
+                                    
+                                    <a href="https://github.com/add1son" class="work-item">
+                                        <div class="icon fa-github"></div>
+                                        <h3>Codebase</h3>
+                                        <p>Public repositories, scripts, and automation tools.</p>
+                                    </a>
+
+                                    <a href="#contact" class="work-item">
+                                        <div class="icon fa-shield"></div>
+                                        <h3>Security</h3>
+                                        <p>Network defense, PGP encryption, and privacy advocacy.</p>
+                                    </a>
+                                </div>
 							</article>
 
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major">Work</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>Work</p>
-								<p>Work</p>
-							</article>
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">About</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>About</p>
-							</article>
+                        <article id="blog">
+                                <h2 class="major">Latest </h2>
+                                <div id="wp-posts-list">
+                                    <div style="text-align:center; padding: 2rem;">
+                                        <span class="icon fa-circle-o-notch fa-spin" style="font-size:2rem; margin-bottom:1rem; opacity:0.5;"></span>
+                                        <p>Establishing uplink...</p>
+                                    </div>
+                                </div>
+                                <ul class="actions">
+                                    <li><a href="https://add1son.com/blog" class="button">Access Full Archives</a></li>
+                                </ul>
+                            </article>
 
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<p><a href="mailto:addison@airmail.cc">Send me an email</a> (with <a href="https://add1son.com/pgp.txt">PGP</a> for extra credit)</p>
-								<p>XMPP:</p>
+                        <article id="resources">
+                                <h2 class="major">Resources</h2>
+                                <p>A curated collection of tools I rely on and reference material I find valuable.</p>
+                                
+                                <div class="work-grid">
+                                    <a href="https://add1son.com/blog/software" class="work-item">
+                                        <div class="icon fa-cogs"></div>
+                                        <h3>The Stack</h3>
+                                        <p>The software, services, and utilities that power my daily workflow.</p>
+                                    </a>
+                                    
+                                    <a href="https://add1son.com/blog/bookmarks" class="work-item">
+                                        <div class="icon fa-bookmark"></div>
+                                        <h3>Bookmarks</h3>
+                                        <p>Websites I frequently use</p>
+                                    </a>
+                                </div>
+                            </article>
+
+						<article id="contact">
+								<h2 class="major">Comms</h2>
+                                <form method="post" action="mailto:a@add1son.com" enctype="text/plain">
+                                    <div class="field half first">
+                                        <label for="name">Name</label>
+                                        <input type="text" name="name" id="name" />
+                                    </div>
+                                    <div class="field half">
+                                        <label for="email">Email</label>
+                                        <input type="text" name="email" id="email" />
+                                    </div>
+                                    <div class="field">
+                                        <label for="message">Message</label>
+                                        <textarea name="message" id="message" rows="4"></textarea>
+                                    </div>
+                                    <ul class="actions">
+                                        <li><input type="submit" value="Send Message" class="special" /></li>
+                                        <li><input type="reset" value="Clear" /></li>
+                                    </ul>
+                                </form>
+
+                                <hr />
+                                
+                                <h3 class="major">Direct Uplinks</h3>
+								<ul class="alt">
+                                    <li><span class="icon fa-envelope"></span> <a href="mailto:a@add1son.com">a@add1son.com</a></li>
+                                    <li><span class="icon fa-lock"></span> <a href="https://keybase.io/addison/pgp_keys.asc?fingerprint=7c77598077272d1e0c1eb1b7d4ccdf100b02779d">PGP Public Key</a></li>
+                                </ul>
+
 								<ul class="icons">
 									<li><a href="https://twitter.com/add1son7" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="https://github.com/add1son" class="icon fa-github"><span class="label">GitHub</span></a></li>
+                                    <li><a href="https://keybase.io/addison" class="icon fa-key"><span class="label">Keybase</span></a></li>
 								</ul>
 							</article>
-
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
-
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
-
-								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button special">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions vertical">
-										<li><a href="#" class="button special">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button special">Special</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button special icon fa-download">Icon</a></li>
-										<li><a href="#" class="button icon fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button special disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="field half first">
-											<label for="demo-name">Name</label>
-											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-										</div>
-										<div class="field half">
-											<label for="demo-email">Email</label>
-											<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-										</div>
-										<div class="field">
-											<label for="demo-category">Category</label>
-											<div class="select-wrapper">
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-										</div>
-										<div class="field half first">
-											<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-											<label for="demo-priority-low">Low</label>
-										</div>
-										<div class="field half">
-											<input type="radio" id="demo-priority-high" name="demo-priority">
-											<label for="demo-priority-high">High</label>
-										</div>
-										<div class="field half first">
-											<input type="checkbox" id="demo-copy" name="demo-copy">
-											<label for="demo-copy">Email me a copy</label>
-										</div>
-										<div class="field half">
-											<input type="checkbox" id="demo-human" name="demo-human" checked>
-											<label for="demo-human">Not a robot</label>
-										</div>
-										<div class="field">
-											<label for="demo-message">Message</label>
-											<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="special" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-
 					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+				<footer id="footer">
+						<p class="copyright">&copy; Add1son . Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 					</footer>
 
 			</div>
 
-		<!-- BG -->
-			<div id="bg"></div>
+		<div id="bg"></div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                fetch('https://add1son.com/blog/wp-json/wp/v2/posts?per_page=5&_embed')
+                .then(response => response.json())
+                .then(posts => {
+                    const listContainer = document.getElementById('wp-posts-list');
+                    if(listContainer) {
+                        listContainer.innerHTML = ''; 
+                        
+                        const ul = document.createElement('ul');
+                        ul.className = 'alt'; 
+
+                        posts.forEach(post => {
+                            const li = document.createElement('li');
+                            
+                            const date = new Date(post.date).toLocaleDateString('en-US', {
+                                year: 'numeric', month: 'short', day: 'numeric'
+                            });
+
+                            let imgHTML = '';
+                            if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url) {
+                                imgHTML = `<img src="${post._embedded['wp:featuredmedia'][0].source_url}" class="post-thumb" style="display:block;" alt="Thumbnail">`;
+                            } else {
+                                imgHTML = `<div class="post-thumb" style="display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.05);"><span class="icon fa-file-text-o" style="opacity:0.5;"></span></div>`;
+                            }
+
+                            li.innerHTML = `
+                                ${imgHTML}
+                                <div class="post-content">
+                                    <span class="date">[${date}]</span>
+                                    <a href="${post.link}" target="_blank" class="post-link">
+                                        ${post.title.rendered}
+                                    </a>
+                                    <p>${post.excerpt.rendered.replace(/<[^>]*>?/gm, '').substring(0, 110)}...</p>
+                                </div>
+                            `;
+                            ul.appendChild(li);
+                        });
+
+                        listContainer.appendChild(ul);
+                    }
+                })
+                .catch(error => {
+                    const container = document.getElementById('wp-posts-list');
+                    if(container) container.innerHTML = '<p>Signal lost. <a href="https://add1son.com/blog">Go to manual override.</a></p>';
+                });
+            });
+        </script>
 
 	</body>
 </html>
