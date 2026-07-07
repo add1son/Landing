@@ -1,5 +1,7 @@
 # Landing
-Building an HTML based landing page with a template as well as a javascript free redirect if noscript is running
+Building an HTML based landing page with a template as well as a javascript free redirect if noscript is running.
+
+Currently live at https://add1son.com
 # How Noscript works
 ```
 <noscript>
