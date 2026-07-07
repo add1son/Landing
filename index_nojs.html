@@ -2,8 +2,45 @@
 <html>
 	<head>
 		<title>Welcome to Add1son.com</title>
+<style>
+  body {
+    background-color: #000;
+    font-family: monospace;
+    color: #ccc;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  a,h1,h2,h3,h4,h5,h6 {
+    color: #fff;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #aaa;
+  }
+  .hand-left,.hand-right {
+    position: fixed;
+    max-width: 250px;
+    width: 45%;
+    bottom: 0;
+    opacity: 0.25;
+    z-index: -1;
+  }
+  .hand-left {
+    left: 0;
+  }
+  .hand-right {
+    right: 0;
+  }
+@media (min-width: 1000px) {
+  .hand-left, .hand-right {
+    opacity: 0.75;
+  }
+}
+</style>
 	</head>
 	<body>
+	<img src='images/hand-left.png' class='hand-left' />
+	<img src='images/hand-right.png' class='hand-right' />
 	<p>Well, this is the javascript free version of my landing page.  Feel free to enable javascript and re-visit https://add1son.com for a better experience if else continue reading.</p>
 	</body>
 	<center>
